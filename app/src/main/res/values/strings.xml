@@ -5,4 +5,8 @@
     <string name="buttonCheck">Check!</string>
     <string name="textChangeGuessRange">Изменить диапазон:</string>
     <string name="editGuessRange">введите число</string>
+    <string name="who_writes_the_text">Who writes the text</string>
+    <string name="add_to_list">Add to list</string>
+    <string name="cancel">Cancel</string>
+    <string name="type_name">type name</string>
 </resources>
