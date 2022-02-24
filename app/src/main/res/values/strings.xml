@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Uniprojects</string>
     <string name="textTitle">Угадай число!</string>
-    <string name="textDescription">(по умолчанию 0-100)</string>
+    <string name="textDescription">(по умолчанию 0–100)</string>
     <string name="buttonCheck">Check!</string>
-    <string name="textChangeGuessRange">Изменить диапазон:</string>
+    <string name="textChangeGuessRange">Изменить диапазон можно в меню</string>
     <string name="editGuessRange">введите число</string>
     <string name="who_writes_the_text">Who writes the text</string>
     <string name="add_to_list">Add to list</string>

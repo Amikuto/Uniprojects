@@ -43,7 +43,7 @@ public class Task4 extends AppCompatActivity implements View.OnClickListener, Ad
         buttonTask4AddToList.setOnClickListener(view -> {
             String name = mainEditText.getText().toString();
             if (!arrayList.contains(name)) {
-                arrayList.add(mainEditText.getText().toString());
+                arrayList.add(name);
                 Collections.sort(arrayList);
             }
             mArrayAdapter.notifyDataSetChanged();

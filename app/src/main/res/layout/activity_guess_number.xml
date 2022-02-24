@@ -40,7 +40,7 @@
         android:hint="@string/textDescription"
         android:inputType="number"
         android:minHeight="48dp"
-        android:textColorHint="#78909C"
+        android:textColorHint="#00838F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTitle" />
@@ -67,7 +67,8 @@
         android:hint="@string/editGuessRange"
         android:inputType="number"
         android:minHeight="48dp"
-        android:textColorHint="#78909C"
+        android:textColorHint="#00838F"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textChangeGuessRange" />
 
