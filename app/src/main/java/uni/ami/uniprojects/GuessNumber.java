@@ -22,7 +22,7 @@ public class GuessNumber extends AppCompatActivity {
 
     private final Random random = new Random();
     private int randomRange = 100;
-    private Integer generatedNumber = generateNumber(randomRange);
+    private Integer generatedNumber = generateNumber();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +38,19 @@ public class GuessNumber extends AppCompatActivity {
             try {
                 Integer gNum = Integer.parseInt(guessedNumber.getText().toString());
 
-                int compare = gNum.compareTo(generatedNumber);
-
-                if (compare < 0) {
-                    Toast.makeText(getApplicationContext(), "guessed number is SMALLER than needed", Toast.LENGTH_LONG).show();
-                } else if (compare > 0) {
-                    Toast.makeText(getApplicationContext(), "guessed number is LARGER than needed", Toast.LENGTH_LONG).show();
+                if (gNum > randomRange) {
+                    Toast.makeText(getApplicationContext(), "guessed number out of bounds!!!", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Gratz! New number is generated", Toast.LENGTH_LONG).show();
-                    generateNumber(randomRange);
+                    int compare = gNum.compareTo(generatedNumber);
+
+                    if (compare < 0) {
+                        Toast.makeText(getApplicationContext(), "guessed number is SMALLER than needed", Toast.LENGTH_LONG).show();
+                    } else if (compare > 0) {
+                        Toast.makeText(getApplicationContext(), "guessed number is LARGER than needed", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Gratz! New number is generated", Toast.LENGTH_LONG).show();
+                        generateNumber();
+                    }
                 }
             } catch (NumberFormatException exception) {
                 Toast.makeText(getApplicationContext(), "Empty guessed number!!!", Toast.LENGTH_LONG).show();
@@ -54,14 +58,12 @@ public class GuessNumber extends AppCompatActivity {
         });
     }
 
-    private Integer generateNumber(int range) {
-        return random.nextInt(range);
+    private Integer generateNumber() {
+        return random.nextInt(randomRange);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // TODO Auto-generated method stub
-        // добавляем пункты меню
         menu.add(0, 1, 0, "level 1");
         menu.add(0, 2, 0, "level 2");
         menu.add(0, 3, 0, "level 3");
@@ -75,21 +77,24 @@ public class GuessNumber extends AppCompatActivity {
         int itemID = item.getItemId();
 
         switch (itemID) {
-            case 1: {
-                generateNumber(100);
+            case 1:
+                randomRange = 100;
+                generateNumber();
                 Toast.makeText(getApplicationContext(), "Try to guess! (0-100)", Toast.LENGTH_LONG).show();
                 break;
-            }
-            case 2: {
-                generateNumber(300);
+
+            case 2:
+                randomRange = 300;
+                generateNumber();
                 Toast.makeText(getApplicationContext(), "Try to guess! (0-300)", Toast.LENGTH_LONG).show();
                 break;
-            }
-            case 3: {
-                generateNumber(500);
+
+            case 3:
+                randomRange = 500;
+                generateNumber();
                 Toast.makeText(getApplicationContext(), "Try to guess! (0-500)", Toast.LENGTH_LONG).show();
                 break;
-            }
+
             case 4:
                 finish();
         }

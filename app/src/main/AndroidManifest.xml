@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Uniprojects">
         <activity
+            android:name=".Task6"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Task5"
             android:exported="true">
             <intent-filter>

@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -42,13 +45,29 @@ public class Task4 extends AppCompatActivity implements View.OnClickListener, Ad
 
         buttonTask4AddToList.setOnClickListener(view -> {
             String name = mainEditText.getText().toString();
-            if (!arrayList.contains(name)) {
+            if (!arrayList.contains(name) && !name.equals("")) {
                 arrayList.add(name);
                 Collections.sort(arrayList);
             }
             mArrayAdapter.notifyDataSetChanged();
         });
         listView.setOnItemClickListener(this);
+        registerForContextMenu(listView);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        menu.add(0, 1, 0, "Remove element");
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        if (item.getItemId() == 1) {
+            arrayList.remove(info.position);
+            mArrayAdapter.notifyDataSetChanged();
+        }
+        return super.onContextItemSelected(item);
     }
 
     @Override
