@@ -11,6 +11,7 @@ import java.util.Date;
 
 public class IntentInfo extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
