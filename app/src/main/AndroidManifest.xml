@@ -10,6 +10,48 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Uniprojects">
         <activity
+            android:name=".IntentInfo"
+            android:exported="true"
+            android:label="Date/time info">
+            <intent-filter>
+<!--                <action android:name="android.intent.action.MAIN" />-->
+                <action android:name="uni.ami.intent.action.showtime" />
+                <action android:name="uni.ami.intent.action.showdate" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntentFilters"
+            android:exported="true"
+            android:label="IntentFilter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntentTime"
+            android:exported="false"
+            android:label="Time basic">
+            <intent-filter>
+                <action android:name="uni.ami.intent.action.showtime" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntentDate"
+            android:exported="false"
+            android:label="Date basic">
+            <intent-filter>
+                <action android:name="uni.ami.intent.action.showdate" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Task7Activity5"
             android:exported="false" />
         <activity

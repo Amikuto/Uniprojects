@@ -25,13 +25,10 @@ public class Test extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
-//        Log.d("LOOK HERE", item.getTitle().toString());
-//        intent = new Intent(this, Task7Activity2.class);
 
         switch (item.getTitle().toString()) {
             case "activity1":
                 intent = new Intent(this, Task7Activity2.class);
-//                Log.d("LOOK HERE", item.getTitle().toString());
                 break;
             case "activity2":
                 intent = new Intent(this, Task7Activity3.class);
