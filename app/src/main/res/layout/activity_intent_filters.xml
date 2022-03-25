@@ -38,8 +38,7 @@
     <TextView
         android:id="@+id/textViewLName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="lName">
+        android:layout_height="wrap_content">
     </TextView>
     <Button
         android:id="@+id/btnLastName"
@@ -49,4 +48,40 @@
         android:layout_margin="20dp"
         android:text="Get last name">
     </Button>
+
+
+    <EditText
+        android:id="@+id/webURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </EditText>
+    <Button
+        android:id="@+id/goToURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Go to URL!">
+    </Button>
+
+    <Button
+        android:id="@+id/openSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:text="Open settings">
+    </Button>
+
+    <Button
+        android:id="@+id/takePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:text="Take a photo">
+    </Button>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>
