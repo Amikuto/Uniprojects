@@ -6,11 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".Test">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="66dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:textSize="25dp"
+            android:text="Input your name: " />
+
+        <EditText
+            android:id="@+id/userNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/transferData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send my name to another window!"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

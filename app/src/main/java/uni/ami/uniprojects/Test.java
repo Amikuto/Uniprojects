@@ -1,19 +1,37 @@
 package uni.ami.uniprojects;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
-public class Test extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Test extends AppCompatActivity implements View.OnClickListener {
+
+    Button transferData;
+    EditText userNameEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+
+        transferData = findViewById(R.id.transferData);
+        transferData.setOnClickListener(this);
+
+        userNameEditText = findViewById(R.id.userNameEditText);
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(this, Task7AddidionTask3TransferName.class);
+        intent.putExtra("name", userNameEditText.getText().toString());
+        startActivityForResult(intent, 1);
     }
 
     @Override
