@@ -82,6 +82,10 @@
     </Button>
 
     <ImageView
+        android:id="@+id/imagePhotoView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:contentDescription="TODO">
+
+    </ImageView>
 </LinearLayout>

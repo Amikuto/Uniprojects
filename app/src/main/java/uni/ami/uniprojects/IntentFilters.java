@@ -21,7 +21,7 @@ public class IntentFilters extends AppCompatActivity  implements View.OnClickLis
     Button btnTime, btnDate, btnLastName, goToURL, openSettings, takePhoto;
     EditText etLName, webURL;
     TextView textViewLName;
-    ImageView imageView;
+    ImageView imagePhotoView;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -47,6 +47,7 @@ public class IntentFilters extends AppCompatActivity  implements View.OnClickLis
         webURL = findViewById(R.id.webURL);
 
         textViewLName = findViewById(R.id.textViewLName);
+        imagePhotoView = findViewById(R.id.imagePhotoView);
     }
 
 
@@ -103,7 +104,7 @@ public class IntentFilters extends AppCompatActivity  implements View.OnClickLis
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            imageView.setImageBitmap(imageBitmap);
+            imagePhotoView.setImageBitmap(imageBitmap);
         }
     }
 }
